@@ -21,6 +21,6 @@ public class studentDAOTest {
  }
  @Test
  public void selectTest() throws Exception {
- 
+	 //Å×½ºÆ®
   }
  }
