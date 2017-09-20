@@ -6,4 +6,10 @@
  <insert id="insertStudent">
   insert into student (number,name) values(#{number},#{name})
  </insert>
+  <select id="selectStudent" resultType="kr.ac.dit.domain.studentVO">
+  <![CDATA[
+  	select * from student
+  	]]>
+ </select>
+ 
 </mapper>

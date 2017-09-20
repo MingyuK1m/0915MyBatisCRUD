@@ -1,4 +1,4 @@
-package dit.co.kr;
+package kr.ac.dit.domain;
 
 public class studentVO {
 	 private String number;

@@ -1,11 +1,15 @@
 package dit.co.kr;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import dit.co.kr.studentVO;
-import dit.co.kr.studentDAO;
+
+import kr.ac.dit.domain.studentVO;
+import kr.ac.dit.persistence.studentDAO;
+
 import org.springframework.test.context.ContextConfiguration;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"file:src/main/webapp/WEB-INF/spring/**/*.xml"})
@@ -19,8 +23,12 @@ public class studentDAOTest {
   item.setName("MyBatisTest");
   studentDao.insertStudent(item);
  }
- @Test
- public void selectTest() throws Exception {
-	 //Å×½ºÆ®
-  }
+	@Test
+	public void testSelect() throws Exception {
+		List<studentVO> items = studentDao.selectStudent();
+		for(int i = 0; i<items.size();i++) {
+			System.out.print(items.get(i).getNumber()+" ");
+			System.out.println(items.get(i).getName());
+		}
+	}
  }
